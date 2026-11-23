@@ -1,0 +1,9 @@
+---
+- name: Ansible Rolle ausführen
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Gewählte Rolle ausführen
+      ansible.builtin.include_role:
+        name: "{{ role_name }}"

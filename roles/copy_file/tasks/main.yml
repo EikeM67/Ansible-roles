@@ -1,0 +1,6 @@
+---
+- name: Testdatei auf Ubuntu-VMs kopieren
+  ansible.builtin.copy:
+    src: testdatei.txt
+    dest: /tmp/testdatei.txt
+    mode: '0644'

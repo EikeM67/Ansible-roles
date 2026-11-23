@@ -1,0 +1,3 @@
+---
+- name: SSH und Python testen
+  ansible.builtin.ping:

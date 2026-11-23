@@ -1,0 +1,15 @@
+---
+- name: Chuck Norris Witz abrufen
+  ansible.builtin.uri:
+    url: https://api.chucknorris.io/jokes/random
+    method: GET
+    return_content: true
+  register: chuck_response
+
+- name: API Antwort anzeigen
+  ansible.builtin.debug:
+    var: chuck_response
+
+- name: Chuck Norris Witz anzeigen
+  ansible.builtin.debug:
+    msg: "{{ chuck_response.json.value }}"

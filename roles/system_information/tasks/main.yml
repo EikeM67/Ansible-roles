@@ -1,0 +1,15 @@
+---
+- name: Systeminformationen sammeln
+  ansible.builtin.gather_facts:
+
+- name: Alle Systeminformationen anzeigen
+  ansible.builtin.debug:
+    var: ansible_facts
+
+- name: OS CPU und RAM anzeigen
+  ansible.builtin.debug:
+    msg:
+      - "Betriebssystem: {{ ansible_facts['distribution'] }}"
+      - "Version: {{ ansible_facts['distribution_version'] }}"
+      - "CPU (vCPUs): {{ ansible_facts['processor_vcpus'] }}"
+      - "RAM: {{ ansible_facts['memtotal_mb'] }} MB"

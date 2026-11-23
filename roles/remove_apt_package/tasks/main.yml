@@ -1,0 +1,6 @@
+---
+- name: Paket pi entfernen
+  ansible.builtin.apt:
+    name: pi
+    state: absent
+

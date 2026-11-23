@@ -1,0 +1,6 @@
+---
+- name: Paket pi installieren
+  ansible.builtin.apt:
+    name: pi
+    state: present
+    update_cache: true
